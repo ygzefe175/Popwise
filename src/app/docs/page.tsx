@@ -45,9 +45,9 @@ export default function DocsPage() {
 
                     {/* Introduction */}
                     <section id="introduction" className="mb-16 animate-fade-in text-white/90">
-                        <h1 className="text-4xl font-black text-white mb-6">PoopUp'a Hoş Geldiniz</h1>
+                        <h1 className="text-4xl font-black text-white mb-6">Popwise'a Hoş Geldiniz</h1>
                         <p className="text-lg text-slate-400 leading-relaxed mb-6">
-                            PoopUp, web sitenizi terk eden ziyaretçileri müşteriye dönüştürmenize yardımcı olan güçlü bir optimizasyon aracıdır.
+                            Popwise, web sitenizi terk eden ziyaretçileri müşteriye dönüştürmenize yardımcı olan güçlü bir optimizasyon aracıdır.
                             Bu rehberde, hesabınızı nasıl kuracağınızı ve ilk kampanyanızı nasıl oluşturacağınızı öğreneceksiniz.
                         </p>
                         <div className="bg-gradient-to-r from-brand-orange/10 to-transparent border-l-4 border-brand-orange p-6 rounded-r-xl">
@@ -65,7 +65,7 @@ export default function DocsPage() {
                             Kurulum
                         </h2>
                         <p className="text-slate-400 mb-6">
-                            PoopUp'ı sitenize entegre etmek için tek yapmanız gereken size verilen Pixel kodunu sitenizin <code className="bg-white/10 px-1 py-0.5 rounded text-white font-mono text-sm">&lt;head&gt;</code> alanına eklemektir.
+                            Popwise'ı sitenize entegre etmek için tek yapmanız gereken size verilen Pixel kodunu sitenizin <code className="bg-white/10 px-1 py-0.5 rounded text-white font-mono text-sm">&lt;head&gt;</code> alanına eklemektir.
                         </p>
 
                         <div className="bg-[#1C1C1E] border border-white/10 rounded-xl overflow-hidden mb-6">
@@ -79,15 +79,9 @@ export default function DocsPage() {
                             </div>
                             <div className="p-6 overflow-x-auto">
                                 <pre className="text-sm font-mono text-blue-300">
-                                    {`<!-- PoopUp Pixel Code -->
-<script>
-  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://cdn.poopup.io/pixel.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','YOUR_PIXEL_ID');
-</script>
-<!-- End PoopUp Pixel Code -->`}
+                                    {`<!-- Popwise Pixel Code -->
+<script src="YOUR_POPWISE_URL/api/pixel?id=YOUR_USER_ID" async></script>
+<!-- End Popwise Pixel Code -->`}
                                 </pre>
                             </div>
                         </div>

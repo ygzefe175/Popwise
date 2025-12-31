@@ -96,8 +96,8 @@ export default function FAQ() {
                             >
                                 <div className="flex items-center gap-4 flex-1">
                                     <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-colors ${openIndex === index
-                                            ? 'bg-brand-orange/20 text-brand-orange'
-                                            : 'bg-white/5 text-slate-500 group-hover:text-white'
+                                        ? 'bg-brand-orange/20 text-brand-orange'
+                                        : 'bg-white/5 text-slate-500 group-hover:text-white'
                                         }`}>
                                         <faq.icon size={20} />
                                     </div>
@@ -124,10 +124,10 @@ export default function FAQ() {
                 <div className="mt-12 text-center">
                     <p className="text-slate-500 mb-4">Başka sorun mu var?</p>
                     <a
-                        href="mailto:destek@poopup.com"
+                        href="mailto:hello@popwise.com"
                         className="inline-block px-8 py-3 bg-white/5 hover:bg-white/10 text-white font-bold rounded-xl border border-white/10 transition-all"
                     >
-                        Bize Yaz - destek@poopup.com
+                        Bize Yaz - hello@popwise.com
                     </a>
                 </div>
             </div>

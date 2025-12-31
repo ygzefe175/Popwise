@@ -3,17 +3,25 @@
 import React from 'react';
 import { Check, X } from 'lucide-react';
 
+interface Feature {
+    name: string;
+    popwise: string | boolean;
+    optinmonster: string | boolean;
+    privy: string | boolean;
+}
+
 export default function ComparisonTable() {
-    const features = [
-        { name: "Aylık Maliyet", poopup: "₺0 (Ücretsiz) / ₺499 (Tek Seferlik)", optinmonster: "$19-79/ay", privy: "$15-95/ay" },
-        { name: "Türkçe Panel", poopup: true, optinmonster: false, privy: false },
-        { name: "Exit-Intent", poopup: true, optinmonster: true, privy: true },
-        { name: "AI Optimizasyo", poopup: true, optinmonster: false, privy: false },
-        { name: "Kurulum Süresi", poopup: "3 dakika", optinmonster: "15-30 dakika", privy: "10-20 dakika" },
-        { name: "Müşteri Desteği", poopup: "Türkçe / Email", optinmonster: "İngilizce / Chat", privy: "İngilizce" },
-        { name: "Branding Kaldırma", poopup: "₺499 ile", optinmonster: "$79/ay ile", privy: "$95/ay ile" },
-        { name: "Mobil Uyumlu", poopup: true, optinmonster: true, privy: true },
-        { name: "Sınırsız Gösterim", poopup: "₺499 ile", optinmonster: "$79/ay ile", privy: "Sınırlı" },
+    const features: Feature[] = [
+        { name: "Aylık Maliyet", popwise: "₺0 - ₺799/ay", optinmonster: "$19-79/ay", privy: "$15-95/ay" },
+        { name: "Türkçe Panel", popwise: true, optinmonster: false, privy: false },
+        { name: "Exit-Intent", popwise: true, optinmonster: true, privy: true },
+        { name: "AI Optimizasyon", popwise: true, optinmonster: false, privy: false },
+        { name: "Kurulum Süresi", popwise: "3 dakika", optinmonster: "15-30 dakika", privy: "10-20 dakika" },
+        { name: "Müşteri Desteği", popwise: "Türkçe / 7/24", optinmonster: "İngilizce / Chat", privy: "İngilizce" },
+        { name: "Branding Kaldırma", popwise: "Pro ile dahil", optinmonster: "$79/ay ile", privy: "$95/ay ile" },
+        { name: "Mobil Uyumlu", popwise: true, optinmonster: true, privy: true },
+        { name: "Sınırsız Gösterim", popwise: "Growth ile", optinmonster: "$79/ay ile", privy: "Sınırlı" },
+        { name: "Yerli Ödeme", popwise: true, optinmonster: false, privy: false },
     ];
 
     return (
@@ -24,7 +32,7 @@ export default function ComparisonTable() {
                         Neden Rakiplerden Daha İyi?
                     </h2>
                     <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-                        Aynı özellikleri yarı fiyatına, Türkçe destek ile sunuyoruz.
+                        Aynı özellikleri daha uygun fiyata, Türkçe destek ve yerli ödeme seçenekleri ile sunuyoruz.
                     </p>
                 </div>
 
@@ -36,7 +44,7 @@ export default function ComparisonTable() {
                                     <th className="text-left p-6 text-slate-400 font-bold text-sm">Özellik</th>
                                     <th className="p-6 text-center">
                                         <div className="bg-gradient-to-br from-brand-orange to-amber-500 text-black font-black px-4 py-2 rounded-xl inline-block">
-                                            PoopUp
+                                            Popwise
                                         </div>
                                     </th>
                                     <th className="p-6 text-slate-400 font-bold text-sm text-center">OptinMonster</th>
@@ -48,8 +56,8 @@ export default function ComparisonTable() {
                                     <tr key={i} className="border-b border-white/5 hover:bg-white/5 transition-colors">
                                         <td className="p-6 text-slate-300 font-medium">{feature.name}</td>
                                         <td className="p-6 text-center">
-                                            {typeof feature.poopup === 'boolean' ? (
-                                                feature.poopup ? (
+                                            {typeof feature.popwise === 'boolean' ? (
+                                                feature.popwise ? (
                                                     <div className="w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center mx-auto">
                                                         <Check size={16} className="text-emerald-400" />
                                                     </div>
@@ -59,7 +67,7 @@ export default function ComparisonTable() {
                                                     </div>
                                                 )
                                             ) : (
-                                                <span className="text-white font-bold">{feature.poopup}</span>
+                                                <span className="text-white font-bold">{feature.popwise}</span>
                                             )}
                                         </td>
                                         <td className="p-6 text-center">
@@ -102,7 +110,7 @@ export default function ComparisonTable() {
                         <p className="text-white font-bold text-lg mb-4">
                             OptinMonster'a yılda <span className="text-brand-orange">$948</span> ödeyecekken,
                             <br />
-                            PoopUp'a sadece <span className="text-brand-orange">₺499</span> öde, sonsuza kadar kullan.
+                            Popwise ile <span className="text-brand-orange">₺0'dan başla</span>, büyüdükçe upgrade et.
                         </p>
                         <a
                             href="/register"

@@ -147,7 +147,7 @@ export default function DemoPage() {
                         <div className="bg-[#1C1C1E] h-14 border-b border-white/5 px-6 flex items-center justify-between">
                             <div className="flex items-center gap-2">
                                 <div className="w-8 h-8 rounded-lg bg-brand-orange flex items-center justify-center font-black text-xs text-black">P</div>
-                                <span className="text-sm font-bold text-white">PoopUp Store</span>
+                                <span className="text-sm font-bold text-white">Popwise Store</span>
                             </div>
                             <div className="flex items-center gap-4">
                                 <div className="text-slate-500"><Info size={16} /></div>

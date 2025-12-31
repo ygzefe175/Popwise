@@ -319,7 +319,7 @@ export default function CreateCampaignModal({ isOpen, onClose, onSubmit }: Creat
                                 </button>
 
                                 {position === 'center' && (
-                                    <p className="text-[10px] text-slate-600 mt-4 font-medium uppercase tracking-widest">Powered by PoopUp</p>
+                                    <p className="text-[10px] text-slate-600 mt-4 font-medium uppercase tracking-widest">Powered by Popwise</p>
                                 )}
                             </div>
 
