@@ -29,7 +29,7 @@ export default function TemplateShowcase() {
                         </div>
 
                         {/* CSS Mockup Area */}
-                        <div className="aspect-[4/3] bg-gradient-to-br from-slate-900 to-black rounded-2xl mb-6 relative overflow-hidden flex items-center justify-center border border-white/5 group-hover:shadow-2xl transition-all">
+                        <div className="aspect-[4/3] bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl mb-6 relative overflow-hidden flex items-center justify-center border border-white/10 group-hover:shadow-2xl transition-all">
 
                             {/* The Popup Mockup */}
                             <div className="w-48 bg-white rounded-lg shadow-xl p-4 transform group-hover:scale-105 transition-transform duration-500 relative">
@@ -63,7 +63,7 @@ export default function TemplateShowcase() {
                         </div>
 
                         {/* CSS Mockup Area */}
-                        <div className="aspect-[4/3] bg-gradient-to-br from-slate-900 to-black rounded-2xl mb-6 relative overflow-hidden flex items-center justify-center border border-white/5 group-hover:shadow-2xl transition-all">
+                        <div className="aspect-[4/3] bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl mb-6 relative overflow-hidden flex items-center justify-center border border-white/10 group-hover:shadow-2xl transition-all">
 
                             {/* The Popup Mockup */}
                             <div className="w-56 bg-[#1a1b2e] rounded-xl shadow-xl p-0 overflow-hidden flex border border-white/10 transform group-hover:scale-105 transition-transform duration-500">
@@ -101,7 +101,7 @@ export default function TemplateShowcase() {
                         </div>
 
                         {/* CSS Mockup Area */}
-                        <div className="aspect-[4/3] bg-gradient-to-br from-slate-900 to-black rounded-2xl mb-6 relative overflow-hidden flex items-center justify-center border border-white/5 group-hover:shadow-2xl transition-all">
+                        <div className="aspect-[4/3] bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl mb-6 relative overflow-hidden flex items-center justify-center border border-white/10 group-hover:shadow-2xl transition-all">
 
                             {/* The Popup Mockup */}
                             <div className="w-48 bg-white rounded-lg shadow-xl p-5 transform group-hover:scale-105 transition-transform duration-500 flex flex-col items-center text-center">

@@ -792,16 +792,16 @@ export default function SiteAnaliz() {
 
                         {/* Önce Neleri Düzeltmelisin - Önceliklendirilmiş Öneriler */}
                         {analysis.recommendations.length > 0 && (
-                            <div className={`bg-gradient-to-br ${theme === 'dark' ? 'from-yellow-500/20 to-orange-500/20 border-yellow-400/30' : 'from-yellow-100 to-orange-50 border-yellow-400'} border-2 rounded-2xl p-6 animate-slide-up`}>
-                                <h3 className="text-xl font-black text-white mb-4 flex items-center gap-2">
-                                    <AlertCircle size={24} className="text-yellow-400" />
+                            <div className={`bg-gradient-to-br ${theme === 'dark' ? 'from-amber-900/40 to-orange-900/40 border-amber-500/50' : 'from-amber-50 to-orange-50 border-amber-400'} border-2 rounded-2xl p-6 animate-slide-up`}>
+                                <h3 className={`text-xl font-black mb-4 flex items-center gap-2 ${theme === 'dark' ? 'text-amber-100' : 'text-amber-900'}`}>
+                                    <AlertCircle size={24} className="text-amber-400" />
                                     {t('priority_fixes')}
                                 </h3>
                                 <div className="space-y-3">
                                     {analysis.recommendations.slice(0, 5).map((rec, idx) => (
                                         <div
                                             key={idx}
-                                            className={`flex items-start gap-3 p-4 rounded-xl ${theme === 'dark' ? 'bg-white/5 border border-white/10' : 'bg-white border border-gray-200'}`}
+                                            className={`flex items-start gap-3 p-4 rounded-xl ${theme === 'dark' ? 'bg-slate-900/80 border border-slate-700' : 'bg-white border border-gray-200'}`}
                                         >
                                             <div className={`w-8 h-8 rounded-full flex items-center justify-center font-black text-sm ${idx === 0 ? 'bg-red-500 text-white' : idx === 1 ? 'bg-orange-500 text-white' : idx === 2 ? 'bg-yellow-500 text-black' : 'bg-blue-500 text-white'} flex-shrink-0`}>
                                                 {idx + 1}
@@ -1055,12 +1055,12 @@ export default function SiteAnaliz() {
                             <button
                                 onClick={exportPDF}
                                 className={`flex-1 btn-secondary inline-flex items-center justify-center gap-2 relative ${isPremium
-                                        ? theme === 'dark'
-                                            ? 'border-cyan-400/20 hover:bg-cyan-400/10'
-                                            : 'border-cyan-400/30 hover:bg-cyan-50'
-                                        : theme === 'dark'
-                                            ? 'border-white/5 cursor-not-allowed group'
-                                            : 'border-gray-300 cursor-not-allowed group'
+                                    ? theme === 'dark'
+                                        ? 'border-cyan-400/20 hover:bg-cyan-400/10'
+                                        : 'border-cyan-400/30 hover:bg-cyan-50'
+                                    : theme === 'dark'
+                                        ? 'border-white/5 cursor-not-allowed group'
+                                        : 'border-gray-300 cursor-not-allowed group'
                                     } transition-all`}
                                 disabled={!isPremium}
                             >

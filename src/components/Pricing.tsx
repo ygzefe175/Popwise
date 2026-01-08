@@ -25,14 +25,15 @@ export default function Pricing() {
         },
         {
             name: "Pro",
-            price: "₺599",
+            price: "₺499",
+            originalPrice: "₺650",
             period: "/ay",
             description: "Büyüyen e-ticaret siteleri",
+            discount: "%23 İNDİRİM",
             features: [
                 "25.000 görüntüleme/ay",
                 "Sınırsız kampanya",
                 "Tüm şablonlar dahil",
-                // Güncelleme: Gamification ve Auto Email eklendi
                 "🎡 Gamification (Çarkıfelek)",
                 "📧 Otomatik E-Posta (Auto-Responder)",
                 "Öncelikli destek",
@@ -41,7 +42,7 @@ export default function Pricing() {
                 "Branding kaldırma"
             ],
             cta: "Pro'ya Başla",
-            popular: true, // Best Value
+            popular: true,
             link: "/checkout?product=pro"
         },
         {
@@ -110,7 +111,19 @@ export default function Pricing() {
                             <div className="mb-6">
                                 <h3 className="text-2xl font-black text-white mb-2">{plan.name}</h3>
                                 <p className="text-sm text-slate-400 mb-4">{plan.description}</p>
-                                <div className="flex items-baseline gap-1">
+
+                                {/* Discount Badge */}
+                                {(plan as any).discount && (
+                                    <div className="inline-block mb-2 px-3 py-1 bg-red-500/20 border border-red-500/30 text-red-400 text-xs font-bold rounded-full">
+                                        🔥 {(plan as any).discount}
+                                    </div>
+                                )}
+
+                                <div className="flex items-baseline gap-2">
+                                    {/* Original Price (strikethrough) */}
+                                    {(plan as any).originalPrice && (
+                                        <span className="text-xl text-slate-500 line-through">{(plan as any).originalPrice}</span>
+                                    )}
                                     <span className="text-5xl font-black text-white">{plan.price}</span>
                                     <span className="text-slate-500">{plan.period}</span>
                                 </div>
