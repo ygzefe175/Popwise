@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import MoneyCalculator from '@/components/MoneyCalculator';
+import { useAuth } from '@/hooks/useAuth';
 import {
     Wallet,
     TrendingUp,
@@ -26,7 +27,8 @@ import {
     ChevronDown,
     Calculator,
     LineChart,
-    Bell
+    Bell,
+    LogIn
 } from 'lucide-react';
 import Link from 'next/link';
 import { supabase } from '@/lib/supabase';
@@ -73,6 +75,7 @@ function incrementUsage(): void {
 }
 
 export default function ParaYonetimiPage() {
+    const { user, loading: authLoading } = useAuth();
     const [isPremium, setIsPremium] = useState(false);
     const [usageCount, setUsageCount] = useState(0);
     const [isLoading, setIsLoading] = useState(true);
@@ -82,14 +85,14 @@ export default function ParaYonetimiPage() {
     useEffect(() => {
         const checkSubscription = async () => {
             try {
-                const { data: { user } } = await supabase.auth.getUser();
                 if (user) {
                     const response = await fetch(`/api/subscription?user_id=${user.id}`);
                     const data = await response.json();
 
                     if (data.success && data.subscription) {
                         const hasPremium = data.subscription.has_money_coach ||
-                            data.subscription.plan_type === 'growth';
+                            data.subscription.plan_type === 'growth' ||
+                            data.subscription.plan_type === 'pro';
                         setIsPremium(hasPremium);
                     }
                 }
@@ -102,8 +105,10 @@ export default function ParaYonetimiPage() {
             setIsLoading(false);
         };
 
-        checkSubscription();
-    }, []);
+        if (!authLoading) {
+            checkSubscription();
+        }
+    }, [user, authLoading]);
 
     const handleCalculate = () => {
         if (!isPremium) {
@@ -188,9 +193,38 @@ export default function ParaYonetimiPage() {
                         <div className="bg-[#1C1C1E] rounded-3xl border border-white/10 p-8 shadow-2xl relative overflow-hidden">
                             <div className="absolute top-0 right-0 w-64 h-64 bg-purple-500/5 rounded-full blur-[80px] pointer-events-none" />
 
-                            {isLoading ? (
+                            {(isLoading || authLoading) ? (
                                 <div className="flex items-center justify-center py-16">
                                     <div className="w-10 h-10 border-4 border-purple-500/30 border-t-purple-500 rounded-full animate-spin" />
+                                </div>
+                            ) : !user ? (
+                                /* Giriş yapmamış kullanıcı */
+                                <div className="text-center py-8">
+                                    <div className="w-16 h-16 rounded-2xl bg-purple-500/20 flex items-center justify-center mx-auto mb-6">
+                                        <LogIn size={28} className="text-purple-400" />
+                                    </div>
+                                    <h3 className="text-xl font-bold text-white mb-2">Giriş Yapmalısınız</h3>
+                                    <p className="text-slate-400 text-sm mb-6">
+                                        Para Koçu'nu kullanmak için önce hesabınıza giriş yapın.
+                                    </p>
+                                    <div className="space-y-3">
+                                        <Link
+                                            href="/login"
+                                            className="block w-full py-3 px-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-bold rounded-xl hover:brightness-110 transition-all flex items-center justify-center gap-2"
+                                        >
+                                            <LogIn size={18} />
+                                            Giriş Yap
+                                        </Link>
+                                        <Link
+                                            href="/register"
+                                            className="block w-full py-3 px-4 bg-white/5 hover:bg-white/10 border border-white/10 text-white font-bold rounded-xl transition-all text-center"
+                                        >
+                                            Ücretsiz Kayıt Ol
+                                        </Link>
+                                    </div>
+                                    <p className="text-slate-500 text-xs mt-4">
+                                        Ücretsiz kullanıcılar ayda 3 hesaplama hakkı kazanır
+                                    </p>
                                 </div>
                             ) : (
                                 <MoneyCalculator
