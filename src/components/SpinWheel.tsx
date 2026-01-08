@@ -250,14 +250,14 @@ export default function SpinWheel({ isOpen, onClose }: SpinWheelProps) {
 
                             {/* Email Input & Spin Button */}
                             <div className="space-y-3">
-                                <div className="relative">
-                                    <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500" size={18} />
+                                <div className="relative flex items-center">
+                                    <Mail className="absolute left-3 text-slate-400" size={18} />
                                     <input
                                         type="email"
                                         value={email}
                                         onChange={(e) => setEmail(e.target.value)}
                                         placeholder="E-posta adresinizi girin"
-                                        className="w-full pl-12 pr-4 py-4 bg-white/10 border border-white/20 rounded-xl text-white placeholder:text-slate-500 focus:outline-none focus:border-yellow-400 transition-colors text-sm"
+                                        className="w-full pl-10 pr-4 py-4 bg-white/10 border border-white/20 rounded-xl text-white placeholder:text-slate-500 focus:outline-none focus:border-yellow-400 transition-colors text-sm"
                                         disabled={isSpinning}
                                     />
                                 </div>
